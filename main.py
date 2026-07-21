@@ -27,10 +27,13 @@ TIRES = {
     "hard": 0.7
 }
 
-def lap_time(track, tire_compound):
-    return TRACKS[track]["base_time"] + actual_degradation_rate(track, tire_compound)
+#Functions
+
+def lap_time(track, tire_compound, tire_age):
+    return TRACKS[track]["base_time"] + (actual_degradation_rate(track, tire_compound) * tire_age)
 
 
 def actual_degradation_rate(track, tire_compound):
     return round(TRACKS[track]["degradation_rate"] * TIRES[tire_compound], 2)
 
+print(lap_time("Spa", "soft", 5))
