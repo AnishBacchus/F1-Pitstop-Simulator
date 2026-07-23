@@ -36,4 +36,5 @@ def lap_time(track, tire_compound, tire_age):
 def actual_degradation_rate(track, tire_compound):
     return round(TRACKS[track]["degradation_rate"] * TIRES[tire_compound], 2)
 
-print(lap_time("Spa", "soft", 5))
+def compare_strategies():
+    
